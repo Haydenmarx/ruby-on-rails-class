@@ -1,24 +1,9 @@
-# README
+#Starting the project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```sudo service postgresql start```
 
-Things you may want to cover:
+> Starts the server
 
-* Ruby version
+```rails s -b $IP -p $PORT```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+> Starts the rails project on Cloud9.
