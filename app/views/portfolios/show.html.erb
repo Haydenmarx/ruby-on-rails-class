@@ -1,0 +1,7 @@
+<%= image_tag @portfolio_item.main_image %>
+<h2><%= @portfolio_item.title %></h2>
+<h3><%= @portfolio_item.subtitle %></h3>
+<p><%= @portfolio_item.body %></p>
+<%= link_to "Edit", edit_portfolio_path(@portfolio_item.id) %>
+<%= link_to "Delete Portfolio item", portfolio_path(@portfolio_item.id), method: :delete, data: { confirm: "Are you sure?" } %>
+<%= link_to 'Back', portfolios_path %>
