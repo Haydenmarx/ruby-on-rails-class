@@ -5,3 +5,7 @@
 <%= link_to "Edit", edit_portfolio_path(@portfolio_item.id) %>
 <%= link_to "Delete Portfolio item", portfolio_path(@portfolio_item.id), method: :delete, data: { confirm: "Are you sure?" } %>
 <%= link_to 'Back', portfolios_path %>
+<h2>Technologies Used</h2>
+<% @portfolio_item.technologies.each do |t| %>
+    <p><%= t.name %></p>
+<% end %>

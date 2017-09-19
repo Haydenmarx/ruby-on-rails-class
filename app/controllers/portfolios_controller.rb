@@ -1,14 +1,19 @@
 class PortfoliosController < ApplicationController
   def index
     @portfolio_items = Portfolio.all
-  end 
+  end
+  
+  def ror
+    @ror_portfolio_items = Portfolio.ror
+  end
   
   def new
     @portfolio_item = Portfolio.new
+    3.times { @portfolio_item.technologies.build }
   end    
   
   def create
-    @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body))
+    @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name]))
     respond_to do |format|
       if @portfolio_item.save
         format.html {redirect_to portfolios_path, notice: 'Your portfolio item is now live.' }
