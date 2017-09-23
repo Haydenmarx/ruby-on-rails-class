@@ -13,5 +13,8 @@ Rails.application.routes.draw do
     end
   end
   
+  #temporary catch all
+  get '/*missing', to: 'pages#missing'
+  
   root to: 'pages#home'
 end
