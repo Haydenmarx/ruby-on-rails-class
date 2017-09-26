@@ -17,9 +17,11 @@
     <%= render "shared/nav", location: "top" %>
     
     <%= current_user_helper %>
+    
 
     <%= yield %>
     
     <%= source_helper("application") %>
+    <%= set_copyright %>
   </body>
 </html>
