@@ -1,18 +1,11 @@
 module ApplicationHelper
-    def sample_helper 
-        (content_tag :p do
-            "The sample helper helps here."
-        end) +
-        content_tag(:p, " More helping over here as well.", class: "more-helping")
-    end
-    
-    def current_user_helper
+    def current_user_helper style = ''
         if current_user.is_a?(GuestUser)
-          (link_to "Register", new_user_registration_path) +
-          '<br>'.html_safe +
-          (link_to "Login", new_user_session_path)
+          (link_to "Register", new_user_registration_path, class: style) +
+
+          (link_to "Login", new_user_session_path, class: style)
         else
-          link_to "Logout", destroy_user_session_path, method: :delete
+          link_to "Logout", destroy_user_session_path, method: :delete, class: style
         end
     end
     
